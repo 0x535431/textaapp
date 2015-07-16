@@ -1,19 +1,15 @@
-Welcome to Polymer Starter Kit Light!
+Welcome to Textaapp
 
-To begin, fire up a local server from inside the `app` directory. Please make sure to serve up the contents of the directory rather than root as routing will otherwise fail to correctly function.
+It's an icelandic teltext scraper / re-host because the coverment channel hasen't bin updated for mobile
+and really needs to be.
 
-## Firing up a server using Python
+So I ROLLED MY OWN.
 
-If you are a Windows user, install Python and from inside the `app` directory run:
+you can see the live site at www.textaapp.is
+If you want to host your own here's the code. Do with it what you want.
+ WTFPL LICENCE.
+ 
+Honestly this is just so I can check the god damn flights coming in and out of keflavik airport.
 
-```
-python -m http.server 8080
-```
+ENJOY!
 
-or on a Mac/*nix machine, run:
-
-```
-python -m SimpleHTTPServer 8080
-```
-
-You can of course also use WAMP or an alternative tool for serving up content. 
