@@ -1,0 +1,63 @@
+<!--
+`<paper-input>` is a single-line text field with Material Design styling.
+
+    <paper-input label="Input label"></paper-input>
+
+It may include an optional error message or character counter.
+
+    <paper-input error-message="Invalid input!" label="Input label"></paper-input>
+    <paper-input char-counter label="Input label"></paper-input>
+
+See `Polymer.PaperInputBehavior` for more API docs.
+
+### Styling
+
+See `Polymer.PaperInputContainer` for a list of custom properties used to
+style this element.
+
+@group Paper Elements
+@element paper-input
+@hero hero.svg
+@demo demo/index.html
+-->
+
+<dom-module id="channel-switcher">
+
+    <template>
+        <paper-icon-button icon="chevron-left" id="decpage"></paper-icon-button>
+        <paper-icon-button icon="chevron-right" id="incpage"></paper-icon-button>
+    </template>
+
+</dom-module>
+
+<script>
+
+    (function () {
+
+        Polymer({
+
+            is: 'channel-switcher',
+            properties: {
+                pagenum: {
+                    type: String,
+                    notify: true
+                }
+            },
+            listeners: {
+                'decpage.tap': 'decpageTap',
+                'incpage.tap': 'incpageTap'
+            },
+
+            decpageTap: function (e) {
+                this.pagenum = String(Number(this.pagenum) -1);
+            },
+
+            incpageTap: function (e) {
+                this.pagenum = String(Number(this.pagenum) +1);
+            }
+
+        })
+
+    })();
+
+</script>

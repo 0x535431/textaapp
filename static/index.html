@@ -1,0 +1,228 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Texta Appið"/>
+    <title>Texta Appið</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- Chrome for Android theme color -->
+    <meta name="theme-color" content="#303F9F">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Tile color for Win8 -->
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Texta Appið">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PTexta Appið">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild-->
+
+    <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <!-- endbuild -->
+
+    <!-- will be replaced with elements/elements.vulcanized.html -->
+    <link rel="import" href="elements/elements.html">
+    <!-- endreplace-->
+</head>
+
+<body unresolved class="fullbleed layout vertical">
+<span id="browser-sync-binding"></span>
+<template is="dom-bind" id="app">
+
+    <paper-drawer-panel id="paperDrawerPanel">
+        <div drawer>
+
+            <!-- Drawer Toolbar -->
+            <paper-toolbar id="drawerToolbar">
+                <span class="paper-font-title">Valmynd</span>
+            </paper-toolbar>
+
+            <!-- Drawer Content -->
+            <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
+                <a data-route="home" href="/t/100/">
+                    <iron-icon icon="home"></iron-icon>
+                    <span>Forsíða</span>
+                </a>
+                <a data-route="news" href="/t/101/">
+                    <iron-icon icon="announcement"></iron-icon>
+                    <span>Fréttir/News</span>
+                </a>
+                <a data-route="vedur" href="/t/160/">
+                    <iron-icon icon="invert-colors"></iron-icon>
+                    <span>Veður</span>
+                </a>
+                <a data-route="dagskra" href="/t/200/">
+                    <iron-icon icon="theaters"></iron-icon>
+                    <span>Dagskrá</span>
+                </a>
+                <a data-route="sport" href="/t/300/">
+                    <iron-icon icon="language"></iron-icon>
+                    <span>Íþróttir</span>
+                </a>
+                <a data-route="samgongur" href="/t/400/">
+                    <iron-icon icon="explore"></iron-icon>
+                    <span>Samgöngur</span>
+                </a>
+                <a data-route="efnisyfirlit" href="/t/555/">
+                    <iron-icon icon="toc"></iron-icon>
+                    <span>Efnisyfirlit</span>
+                </a>
+
+                <paper-toolbar id="mydrawerToolbar">
+                    <span class="paper-font-title">Um Appið</span>
+                </paper-toolbar>
+
+                <a data-route="about" href="/about">
+                    <iron-icon icon="info"></iron-icon>
+                    <span>Um okkur</span>
+                </a>
+
+                <a data-route="contact" href="/contact">
+                    <iron-icon icon="mail"></iron-icon>
+                    <span>Contact</span>
+                </a>
+
+
+            </paper-menu>
+        </div>
+        <paper-header-panel main mode="waterfall">
+
+            <!-- Main Toolbar -->
+            <paper-toolbar id="mainToolbar">
+                <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+                <span class="flex"></span>
+                <!-- Toolbar icons -->
+                <!--<paper-icon-button icon="refresh" id="decpage"></paper-icon-button>
+                <paper-icon-button icon="search" id="incpage"></paper-icon-button>-->
+                <channel-switcher pagenum="{{pagedatanum}}"></channel-switcher>
+                <!-- Application name -->
+                <!--<div class="middle app-name">Texta Appið</div>-->
+                <!--<input class="middle" id="teleinput" is="iron-input" allowed-pattern="[0-9]" maxlength="3" bind-value="{{pagedatanum}}" value="100" prevent-invalid-input>-->
+
+                <div class="middle">
+                    <channel-selector id="teleinput" char-counter maxlength="3" minlength="3"
+                                      allowed-pattern="[0-9]" prevent-invalid-input label="Texta App"
+                                      value="{{pagedatanum}}"></channel-selector>
+                </div>
+                <div class="middle" style="margin-left: 12px">
+                    <paper-spinner id="myspinner" active></paper-spinner>
+                </div>
+                <!-- Application sub title -->
+                <div class="bottom title"></div>
+
+            </paper-toolbar>
+
+            <!-- Main Content -->
+            <div class="content">
+                <iron-pages attr-for-selected="data-route" selected="{{route}}">
+
+                    <section data-route="home">
+                        <paper-material elevation="1" style="background: black">
+                            <my-tele auto-fit-on-attach pagenum="{{pagedatanum}}"></my-tele>
+                        </paper-material>
+                        <paper-material elevation="1">
+                            <!-- textaadsense -->
+                            <ins class="adsbygoogle"
+                                 style="display:inline-block;width:320px;height:100px"
+                                 data-ad-client="ca-pub-9451771649521324"
+                                 data-ad-slot="2830082290"></ins>
+                        </paper-material>
+                    </section>
+
+                    <section data-route="users">
+                        <paper-material elevation="1">
+                            <h2 class="paper-font-display2">Afhverju?</h2>
+
+                            <p class="paper-font-subhead">Radio on the internet</p>
+
+                            <p class="paper-font-body2">“So then it hits me – we could take this thing called The
+                                "Radio" and put it on this new thing called The "Internet". And no one was doing it – no
+                                one.”</p>
+                            <iron-image src="/static/images/russ.jpg" style="width:100%; height:400px;"
+                                        sizing="cover"></iron-image>
+                        </paper-material>
+                    </section>
+
+                    <section data-route="about">
+                        <paper-material elevation="1">
+                            <h2 class="paper-font-display2">Afhverju?</h2>
+
+                            <p class="paper-font-subhead">Radio on the internet, that's why!</p>
+
+                            <p class="paper-font-body2">“So then it hits me – we could take this thing called The
+                                "Radio" and put it on this new thing called The "Internet". And no one was doing it – no
+                                one.”</p>
+                            <iron-image src="/static/images/russ.jpg" style="width:100%; height:400px;"
+                                        sizing="cover"></iron-image>
+                        </paper-material>
+                    </section>
+
+                    <section data-route="user-info">
+                        <paper-material elevation="1">
+                            <h2 class="paper-font-display2">
+                                User:<span>{{params.name}}</span>
+                            </h2>
+
+                            <div>This is <span>{{params.name}}</span>'s section</div>
+                        </paper-material>
+                    </section>
+
+                    <section data-route="contact">
+
+                        <!--<object type="text/html" data="http://www.teltxt.net/100/"
+                                style="width:100%"/>-->
+                        <!--<paper-material elevation="1">
+                          &lt;!&ndash;<h2 class="paper-font-display2">Contact</h2>&ndash;&gt;
+                          &lt;!&ndash;<p>This is the contact section</p>&ndash;&gt;
+
+                        </paper-material>-->
+                    </section>
+
+                </iron-pages>
+            </div>
+        </paper-header-panel>
+    </paper-drawer-panel>
+
+</template>
+
+<!-- build:js scripts/app.js -->
+<script src="scripts/app.js"></script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- endbuild-->
+
+</body>
+
+</html>

@@ -1,0 +1,839 @@
+<dom-module id="my-tele">
+
+    <style>
+        :host {
+        @apply(- -layout);
+            display: inline-block;
+            padding: 0px;
+            background: black;
+            width: 100%;
+            height: 100%;
+        }
+
+        span.c00 {
+            color: #000000;
+            background-color: #000000
+        }
+
+        span.c10 {
+            color: #ff0000;
+            background-color: #000000
+        }
+
+        span.c20 {
+            color: #00ff00;
+            background-color: #000000
+        }
+
+        span.c30 {
+            color: #ffff00;
+            background-color: #000000
+        }
+
+        span.c40 {
+            color: #0000ff;
+            background-color: #000000
+        }
+
+        span.c50 {
+            color: #ff00ff;
+            background-color: #000000
+        }
+
+        span.c60 {
+            color: #00ffff;
+            background-color: #000000
+        }
+
+        span.c70 {
+            color: #ffffff;
+            background-color: #000000
+        }
+
+        span.c01 {
+            color: #000000;
+            background-color: #ff0000
+        }
+
+        span.c11 {
+            color: #ff0000;
+            background-color: #ff0000
+        }
+
+        span.c21 {
+            color: #00ff00;
+            background-color: #ff0000
+        }
+
+        span.c31 {
+            color: #ffff00;
+            background-color: #ff0000
+        }
+
+        span.c41 {
+            color: #0000ff;
+            background-color: #ff0000
+        }
+
+        span.c51 {
+            color: #ff00ff;
+            background-color: #ff0000
+        }
+
+        span.c61 {
+            color: #00ffff;
+            background-color: #ff0000
+        }
+
+        span.c71 {
+            color: #ffffff;
+            background-color: #ff0000
+        }
+
+        span.c02 {
+            color: #000000;
+            background-color: #00ff00
+        }
+
+        span.c12 {
+            color: #ff0000;
+            background-color: #00ff00
+        }
+
+        span.c22 {
+            color: #00ff00;
+            background-color: #00ff00
+        }
+
+        span.c32 {
+            color: #ffff00;
+            background-color: #00ff00
+        }
+
+        span.c42 {
+            color: #0000ff;
+            background-color: #00ff00
+        }
+
+        span.c52 {
+            color: #ff00ff;
+            background-color: #00ff00
+        }
+
+        span.c62 {
+            color: #00ffff;
+            background-color: #00ff00
+        }
+
+        span.c72 {
+            color: #ffffff;
+            background-color: #00ff00
+        }
+
+        span.c03 {
+            color: #000000;
+            background-color: #ffff00
+        }
+
+        span.c13 {
+            color: #ff0000;
+            background-color: #ffff00
+        }
+
+        span.c23 {
+            color: #00ff00;
+            background-color: #ffff00
+        }
+
+        span.c33 {
+            color: #ffff00;
+            background-color: #ffff00
+        }
+
+        span.c43 {
+            color: #0000ff;
+            background-color: #ffff00
+        }
+
+        span.c53 {
+            color: #ff00ff;
+            background-color: #ffff00
+        }
+
+        span.c63 {
+            color: #00ffff;
+            background-color: #ffff00
+        }
+
+        span.c73 {
+            color: #ffffff;
+            background-color: #ffff00
+        }
+
+        span.c04 {
+            color: #000000;
+            background-color: #0000ff
+        }
+
+        span.c14 {
+            color: #ff0000;
+            background-color: #0000ff
+        }
+
+        span.c24 {
+            color: #00ff00;
+            background-color: #0000ff
+        }
+
+        span.c34 {
+            color: #ffff00;
+            background-color: #0000ff
+        }
+
+        span.c44 {
+            color: #0000ff;
+            background-color: #0000ff
+        }
+
+        span.c54 {
+            color: #ff00ff;
+            background-color: #0000ff
+        }
+
+        span.c64 {
+            color: #00ffff;
+            background-color: #0000ff
+        }
+
+        span.c74 {
+            color: #ffffff;
+            background-color: #0000ff
+        }
+
+        span.c05 {
+            color: #000000;
+            background-color: #ff00ff
+        }
+
+        span.c15 {
+            color: #ff0000;
+            background-color: #ff00ff
+        }
+
+        span.c25 {
+            color: #00ff00;
+            background-color: #ff00ff
+        }
+
+        span.c35 {
+            color: #ffff00;
+            background-color: #ff00ff
+        }
+
+        span.c45 {
+            color: #0000ff;
+            background-color: #ff00ff
+        }
+
+        span.c55 {
+            color: #ff00ff;
+            background-color: #ff00ff
+        }
+
+        span.c65 {
+            color: #00ffff;
+            background-color: #ff00ff
+        }
+
+        span.c75 {
+            color: #ffffff;
+            background-color: #ff00ff
+        }
+
+        span.c06 {
+            color: #000000;
+            background-color: #00ffff
+        }
+
+        span.c16 {
+            color: #ff0000;
+            background-color: #00ffff
+        }
+
+        span.c26 {
+            color: #00ff00;
+            background-color: #00ffff
+        }
+
+        span.c36 {
+            color: #ffff00;
+            background-color: #00ffff
+        }
+
+        span.c46 {
+            color: #0000ff;
+            background-color: #00ffff
+        }
+
+        span.c56 {
+            color: #ff00ff;
+            background-color: #00ffff
+        }
+
+        span.c66 {
+            color: #00ffff;
+            background-color: #00ffff
+        }
+
+        span.c76 {
+            color: #ffffff;
+            background-color: #00ffff
+        }
+
+        span.c07 {
+            color: #000000;
+            background-color: #ffffff
+        }
+
+        span.c17 {
+            color: #ff0000;
+            background-color: #ffffff
+        }
+
+        span.c27 {
+            color: #00ff00;
+            background-color: #ffffff
+        }
+
+        span.c37 {
+            color: #ffff00;
+            background-color: #ffffff
+        }
+
+        span.c47 {
+            color: #0000ff;
+            background-color: #ffffff
+        }
+
+        span.c57 {
+            color: #ff00ff;
+            background-color: #ffffff
+        }
+
+        span.c67 {
+            color: #00ffff;
+            background-color: #ffffff
+        }
+
+        span.c77 {
+            color: #ffffff;
+            background-color: #ffffff
+        }
+
+        /* The same again for all the links... */
+        span.c00 a {
+            color: #000000;
+            background-color: #000000
+        }
+
+        span.c10 a {
+            color: #ff0000;
+            background-color: #000000
+        }
+
+        span.c20 a {
+            color: #00ff00;
+            background-color: #000000
+        }
+
+        span.c30 a {
+            color: #ffff00;
+            background-color: #000000
+        }
+
+        span.c40 a {
+            color: #0000ff;
+            background-color: #000000
+        }
+
+        span.c50 a {
+            color: #ff00ff;
+            background-color: #000000
+        }
+
+        span.c60 a {
+            color: #00ffff;
+            background-color: #000000
+        }
+
+        span.c70 a {
+            color: #ffffff;
+            background-color: #000000
+        }
+
+        span.c01 a {
+            color: #000000;
+            background-color: #ff0000
+        }
+
+        span.c11 a {
+            color: #ff0000;
+            background-color: #ff0000
+        }
+
+        span.c21 a {
+            color: #00ff00;
+            background-color: #ff0000
+        }
+
+        span.c31 a {
+            color: #ffff00;
+            background-color: #ff0000
+        }
+
+        span.c41 a {
+            color: #0000ff;
+            background-color: #ff0000
+        }
+
+        span.c51 a {
+            color: #ff00ff;
+            background-color: #ff0000
+        }
+
+        span.c61 a {
+            color: #00ffff;
+            background-color: #ff0000
+        }
+
+        span.c71 a {
+            color: #ffffff;
+            background-color: #ff0000
+        }
+
+        span.c02 a {
+            color: #000000;
+            background-color: #00ff00
+        }
+
+        span.c12 a {
+            color: #ff0000;
+            background-color: #00ff00
+        }
+
+        span.c22 a {
+            color: #00ff00;
+            background-color: #00ff00
+        }
+
+        span.c32 a {
+            color: #ffff00;
+            background-color: #00ff00
+        }
+
+        span.c42 a {
+            color: #0000ff;
+            background-color: #00ff00
+        }
+
+        span.c52 a {
+            color: #ff00ff;
+            background-color: #00ff00
+        }
+
+        span.c62 a {
+            color: #00ffff;
+            background-color: #00ff00
+        }
+
+        span.c72 a {
+            color: #ffffff;
+            background-color: #00ff00
+        }
+
+        span.c03 a {
+            color: #000000;
+            background-color: #ffff00
+        }
+
+        span.c13 a {
+            color: #ff0000;
+            background-color: #ffff00
+        }
+
+        span.c23 a {
+            color: #00ff00;
+            background-color: #ffff00
+        }
+
+        span.c33 a {
+            color: #ffff00;
+            background-color: #ffff00
+        }
+
+        span.c43 a {
+            color: #0000ff;
+            background-color: #ffff00
+        }
+
+        span.c53 a {
+            color: #ff00ff;
+            background-color: #ffff00
+        }
+
+        span.c63 a {
+            color: #00ffff;
+            background-color: #ffff00
+        }
+
+        span.c73 a {
+            color: #ffffff;
+            background-color: #ffff00
+        }
+
+        span.c04 a {
+            color: #000000;
+            background-color: #0000ff
+        }
+
+        span.c14 a {
+            color: #ff0000;
+            background-color: #0000ff
+        }
+
+        span.c24 a {
+            color: #00ff00;
+            background-color: #0000ff
+        }
+
+        span.c34 a {
+            color: #ffff00;
+            background-color: #0000ff
+        }
+
+        span.c44 a {
+            color: #0000ff;
+            background-color: #0000ff
+        }
+
+        span.c54 a {
+            color: #ff00ff;
+            background-color: #0000ff
+        }
+
+        span.c64 a {
+            color: #00ffff;
+            background-color: #0000ff
+        }
+
+        span.c74 a {
+            color: #ffffff;
+            background-color: #0000ff
+        }
+
+        span.c05 a {
+            color: #000000;
+            background-color: #ff00ff
+        }
+
+        span.c15 a {
+            color: #ff0000;
+            background-color: #ff00ff
+        }
+
+        span.c25 a {
+            color: #00ff00;
+            background-color: #ff00ff
+        }
+
+        span.c35 a {
+            color: #ffff00;
+            background-color: #ff00ff
+        }
+
+        span.c45 a {
+            color: #0000ff;
+            background-color: #ff00ff
+        }
+
+        span.c55 a {
+            color: #ff00ff;
+            background-color: #ff00ff
+        }
+
+        span.c65 a {
+            color: #00ffff;
+            background-color: #ff00ff
+        }
+
+        span.c75 a {
+            color: #ffffff;
+            background-color: #ff00ff
+        }
+
+        span.c06 a {
+            color: #000000;
+            background-color: #00ffff
+        }
+
+        span.c16 a {
+            color: #ff0000;
+            background-color: #00ffff
+        }
+
+        span.c26 a {
+            color: #00ff00;
+            background-color: #00ffff
+        }
+
+        span.c36 a {
+            color: #ffff00;
+            background-color: #00ffff
+        }
+
+        span.c46 a {
+            color: #0000ff;
+            background-color: #00ffff
+        }
+
+        span.c56 a {
+            color: #ff00ff;
+            background-color: #00ffff
+        }
+
+        span.c66 a {
+            color: #00ffff;
+            background-color: #00ffff
+        }
+
+        span.c76 a {
+            color: #ffffff;
+            background-color: #00ffff
+        }
+
+        span.c07 a {
+            color: #000000;
+            background-color: #ffffff
+        }
+
+        span.c17 a {
+            color: #ff0000;
+            background-color: #ffffff
+        }
+
+        span.c27 a {
+            color: #00ff00;
+            background-color: #ffffff
+        }
+
+        span.c37 a {
+            color: #ffff00;
+            background-color: #ffffff
+        }
+
+        span.c47 a {
+            color: #0000ff;
+            background-color: #ffffff
+        }
+
+        span.c57 a {
+            color: #ff00ff;
+            background-color: #ffffff
+        }
+
+        span.c67 a {
+            color: #00ffff;
+            background-color: #ffffff
+        }
+
+        span.c77 a {
+            color: #ffffff;
+            background-color: #ffffff
+        }
+    </style>
+
+    <template>
+        <!--<input is="iron-input" bind-value="{{pagenum}}" value="{{pagenum::input}}" allowed-pattern="[0-9]" maxlength="3" prevent-invalid-input>-->
+        <!--<object id="teletext" type="text/html" data="{{pageurl}}" style="width: 100%; height: 850px"></object>-->
+
+        <span id="time" class="c30">{{time}}</span>
+        <iron-ajax
+                auto
+                id="ajax"
+                url="{{pageurl}}"
+                handle-as="text"
+                on-response="hresponse"
+                lastResponse="hresponse"
+                debounce-duration="300"></iron-ajax>
+
+        <div id="tcontainer" on-click="handlink"></div>
+
+    </template>
+
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'my-tele',
+        behaviors: [
+            Polymer.IronResizableBehavior, Polymer.IronA11yKeysBehavior, Polymer.IronFitBehavior
+        ],
+        ready: function () {
+            this.fit();
+            console.log("ready");
+        },
+        attached: function () {
+            // Clock code
+            this.interval = setInterval(this.updateTime.bind(this), 500);
+            //var myinput = document.querySelector('#teleinput');
+            //this.fit();
+            this.async(this.notifyResize, 1);
+            this.pagenum = 100;
+            //myinput.bindValue = this.pagenum;
+            console.log("attached");
+        },
+        updateTime: function () {
+            var d = new Date();
+            this.time = " " + d.toLocaleTimeString();
+        },
+        detached: function () {
+            clearInterval(this.interval);
+        },
+        listeners: {
+            'iron-resize': '_onIronResize',
+            'ajax.request': 'myloader'
+        },
+        properties: {
+            pagenum: {
+                type: String,
+                value: "100",
+                notify: true,
+                observer: '_pagenumChanged'
+            },
+            subnum: {
+                type: String,
+                value: "00",
+                notify: true
+            },
+            pageurl: {
+                type: String,
+                value: window.location.origin + "/" + "100" + "/",
+                observer: '_pageurlChanged'
+            },
+            keyEventTarget: {
+                type: Object,
+                value: function () {
+                    return document.body;
+                }
+            }
+        },
+        get parent() {
+            if (this.parentNode.nodeType === Node.DOCUMENT_FRAGMENT_NODE) {
+                return this.parentNode.host;
+            }
+            return this.parentNode;
+        },
+        myloader: function () {
+            Polymer.dom(document).querySelector("#myspinner").active = true;
+            //this.$.myspinner.active = true;
+        },
+        _onIronResize: function () {
+            var x = Math.floor(this.parent.offsetWidth / 3);
+            var y = Math.floor(this.parent.offsetHeight / 3);
+            document.getElementById("tcontainer").style.fontSize = String(Math.floor(this.offsetWidth / 25)) + "px";
+            //this.translate3d(x + 'px', y + 'px', 0);
+        },
+        hresponse: function (request) {
+            //this.$.myspinner.active = false;
+            Polymer.dom(document).querySelector("#myspinner").active = false;
+            Polymer.dom(this.$.tcontainer).innerHTML = request.detail.response;
+            //Clock Code, replaceing
+            // If text is "Til baka" then don't insert the fancy clock
+            if (Polymer.dom(this.$.tcontainer.childNodes[0]).childNodes[4].innerText.length == 9) {
+                var beforeNode = Polymer.dom(this.$.tcontainer.childNodes[0]).childNodes[4];
+                Polymer.dom(this.$.tcontainer.childNodes[0]).insertBefore(this.$.time, beforeNode);
+                Polymer.dom(this.$.tcontainer.childNodes[0]).removeChild(beforeNode);
+            }
+            //console.log(request.detail.response);
+            //console.log(this.$.ajax.lastResponse);
+        },
+        handlink: function (event) {
+            // Handle normal clicks.
+            if (!event.target.getAttribute('href')) {
+                return
+            }
+            event.preventDefault();
+            var subpagenum = event.target.getAttribute('href');
+            if (subpagenum.length == 5) {
+                this.pagenum = event.target.getAttribute('href').substr(1, 3);
+            } else if (subpagenum.length == 7) {
+                this.pageurl = window.location.origin + "/" + this.pagenum + "/" + event.target.getAttribute('href');
+            }
+        },
+        _pagenumChanged: function (newValue, oldValue) {
+            if (newValue.length == 3) {
+                this.pageurl = window.location.origin + "/" + newValue + "/";
+            }
+        },
+        _pageurlChanged: function (newValue, oldValue) {
+            //newValue = newValue.replace(/\D/g,'');
+            //alert(newValue);
+        },
+        keyBindings: {
+            '* left right down up ': '_updatePressed'
+        },
+        _updatePressed: function (event) {
+            switch (event.detail.key) {
+                case "up":
+                    if (this.pagenum < 999) {
+                        this.pagenum = String(Number(this.pagenum) + 1);
+                    } else {
+                        console.log("999 is max")
+                    }
+                    break;
+                case "down":
+                    if (this.pagenum > 100) {
+                        this.pagenum = String(Number(this.pagenum) - 1);
+                    } else {
+                        console.log("100 is min")
+                    }
+                    break;
+                default:
+                    console.log(event.detail);
+            }
+
+            //this.pagenum = String(Number(this.pagenum) + 1);
+            /*this._setPressed(
+             this.pressed + event.detail.combo + ' pressed!\n'
+             );*/
+        }
+
+        /*properties: {
+         x: {
+         type: Number,
+         value: 0
+         },
+         y: {
+         type: Number,
+         value: 0
+         }
+         },
+         listeners: {
+         'iron-resize': '_onIronResize'
+         },
+         attached: function() {
+         this.async(this.notifyResize, 1);
+         },
+         get parent() {
+         if (this.parentNode.nodeType === Node.DOCUMENT_FRAGMENT_NODE) {
+         return this.parentNode.host;
+         }
+         return this.parentNode;
+         },
+         _onIronResize: function() {
+         var x = this.x = Math.floor(this.parent.offsetWidth / 3);
+         var y = this.y = Math.floor(this.parent.offsetHeight / 3);
+         this.translate3d(x + 'px', y + 'px', 0);
+         }*/
+    });
+</script>
